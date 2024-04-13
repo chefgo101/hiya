@@ -1,0 +1,72 @@
+#Target with darts
+#choose 2 random number(x,y)
+#use distance formula to figure out how far
+#throw darts using random number
+import random
+import math
+import turtle
+
+
+turtle.bgcolor('green')
+turtle.goto(0,-50)
+turtle.begin_fill()
+turtle.circle(100)
+turtle.color('white')
+turtle.end_fill()
+turtle.goto(0,-30)
+turtle.begin_fill()
+turtle.circle(80)
+turtle.color('black')
+turtle.end_fill()
+turtle.goto(0,-10)
+turtle.begin_fill()
+turtle.circle(60)
+turtle.color('blue')
+turtle.end_fill()
+turtle.goto(0,20)
+turtle.begin_fill()
+turtle.circle(30)
+turtle.color('red')
+turtle.end_fill()
+turtle.goto(0,30)
+turtle.begin_fill()
+turtle.circle(20)
+turtle.color('yellow')
+turtle.end_fill()
+
+
+
+for a in range(3):
+    x = (random.randint(0,100))
+    y = (random.randint(0,100))
+    turtle.penup()
+    turtle.goto(x,y)
+    turtle.color("pink")
+    turtle.begin_fill()
+    turtle.circle(4)
+    turtle.end_fill()
+    turtle.penup()
+    x1 = 0
+    y1 = 0
+    x2 = x
+    y2 = y
+    turtle.begin_fill()
+    distance = math.sqrt((x2-x1)**2 + (y2-y1) ** 2)
+    print(distance)
+
+score = 0
+if distance > 100:
+    score = score
+elif distance > 80:
+    score = score + 10
+elif distance > 60:
+    score = score + 25
+elif distance > 40:
+    score = score + 50
+elif distance > 20:
+    score = score + 75
+elif distance <= 20:
+    score = score + 100
+print(score)
+
+turtle.goto(0,0)
